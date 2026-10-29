@@ -1,10 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercedes-Benz A250 Sport 2016 - En Venta</title>
+    
+    <!-- ETIQUETAS PARA MINIATURA EN WHATSAPP / REDES SOCIALES -->
+    <meta property="og:title" content="Mercedes-Benz A250 Sport 2016 - En Venta en Bogotá">
+    <meta property="og:description" content="Modelo 2016, 46.000 km, Único Dueño, mantenimientos en concesionario. ¡Impecable!">
+    <meta property="og:image" content="https://compa-cc.github.io/mercedes-benz-250/images/1.jpg">
+    <meta property="og:url" content="https://compa-cc.github.io/mercedes-benz-250/">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -92,6 +99,8 @@
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.3s ease;
+            touch-action: manipulation;
         }
         .location-tag {
             position: absolute;
@@ -106,6 +115,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            z-index: 2;
         }
         .location-tag span {
             color: #00D26A;
@@ -151,7 +161,7 @@
             font-weight: 600;
         }
 
-        /* TECH SPECS GRID (FABRICA) */
+        /* TECH SPECS GRID */
         .tech-section {
             width: 100%;
             background: #141419;
@@ -183,7 +193,7 @@
             font-weight: 600;
         }
 
-        /* TECH SPECS BAR INFERIOR */
+        /* SPECS BAR */
         .specs-bar {
             width: 100%;
             display: grid;
@@ -221,7 +231,7 @@
             60% {transform: translateY(-3px);}
         }
 
-        /* GALERÍA DE 15 FOTOS EN GRANDE */
+        /* GALERÍA DE FOTOS CON ZOOM POR DOBLE TOQUE */
         .gallery-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -241,9 +251,10 @@
             background: #141419;
             border: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-           opacity: 0;
+            opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.7s ease, transform 0.7s ease;
+            position: relative;
         }
         .photo-card.visible {
             opacity: 1;
@@ -253,6 +264,14 @@
             width: 100%;
             height: auto;
             display: block;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            touch-action: manipulation;
+        }
+        .photo-card img.zoomed {
+            transform: scale(2.2);
+            cursor: zoom-out;
         }
 
         /* FOOTER / CONTACTO */
@@ -283,7 +302,7 @@
 </head>
 <body>
 
-    <!-- PANTALLA INICIAL (HERO / FICHA TÉCNICA) -->
+    <!-- HERO / FICHA TÉCNICA -->
     <section class="hero">
         <div class="hero-top">
             <div class="badge">★ Único Dueño · Impecable</div>
@@ -299,13 +318,12 @@
         </div>
 
         <div class="hero-image-container">
-            <img src="images/1.jpg" alt="Mercedes-Benz A250 Sport">
+            <img src="images/1.jpg" alt="Mercedes-Benz A250 Sport" class="zoomable">
             <div class="location-tag">
                 <span>📍</span> Bogotá, Colombia
             </div>
         </div>
 
-        <!-- TARJETAS DE DATOS CLAVE -->
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-icon">km</div>
@@ -330,7 +348,6 @@
             </div>
         </div>
 
-        <!-- FICHA TÉCNICA DE FÁBRICA Y DESEMPEÑO -->
         <div class="tech-section">
             <div class="tech-title">Ficha Técnica & Desempeño</div>
             <div class="tech-grid">
@@ -361,7 +378,6 @@
             </div>
         </div>
 
-        <!-- BARRA INFERIOR DE DESTACADOS -->
         <div class="specs-bar">
             <div class="spec-col">
                 <div class="spec-title">Tracción</div>
@@ -382,40 +398,40 @@
         </div>
     </section>
 
-    <!-- GALERÍA DE 15 FOTOS EN GRANDE CON SCROLL Y ANIMACIÓN -->
+    <!-- GALERÍA DE FOTOS -->
     <div class="gallery-wrapper">
         <h2 class="section-title">Galería del Vehículo</h2>
 
-        <div class="photo-card"><img src="images/1.jpg" alt="Foto 1" loading="lazy"></div>
-        <div class="photo-card"><img src="images/2.jpg" alt="Foto 2" loading="lazy"></div>
-        <div class="photo-card"><img src="images/3.jpg" alt="Foto 3" loading="lazy"></div>
-        <div class="photo-card"><img src="images/4.jpg" alt="Foto 4" loading="lazy"></div>
-        <div class="photo-card"><img src="images/5.jpg" alt="Foto 5" loading="lazy"></div>
-        <div class="photo-card"><img src="images/6.jpg" alt="Foto 6" loading="lazy"></div>
-        <div class="photo-card"><img src="images/7.jpg" alt="Foto 7" loading="lazy"></div>
-        <div class="photo-card"><img src="images/8.jpg" alt="Foto 8" loading="lazy"></div>
-        <div class="photo-card"><img src="images/9.jpg" alt="Foto 9" loading="lazy"></div>
-        <div class="photo-card"><img src="images/10.jpg" alt="Foto 10" loading="lazy"></div>
-        <div class="photo-card"><img src="images/11.jpg" alt="Foto 11" loading="lazy"></div>
-        <div class="photo-card"><img src="images/12.jpg" alt="Foto 12" loading="lazy"></div>
-        <div class="photo-card"><img src="images/13.jpg" alt="Foto 13" loading="lazy"></div>
-        <div class="photo-card"><img src="images/14.jpg" alt="Foto 14" loading="lazy"></div>
-        <div class="photo-card"><img src="images/15.jpg" alt="Foto 15" loading="lazy"></div>
+        <div class="photo-card"><img src="images/1.jpg" alt="Foto 1" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/2.jpg" alt="Foto 2" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/3.jpg" alt="Foto 3" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/4.jpg" alt="Foto 4" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/5.jpg" alt="Foto 5" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/6.jpg" alt="Foto 6" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/7.jpg" alt="Foto 7" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/8.jpg" alt="Foto 8" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/9.jpg" alt="Foto 9" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/10.jpg" alt="Foto 10" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/11.jpg" alt="Foto 11" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/12.jpg" alt="Foto 12" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/13.jpg" alt="Foto 13" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/14.jpg" alt="Foto 14" class="zoomable" loading="lazy"></div>
+        <div class="photo-card"><img src="images/15.jpg" alt="Foto 15" class="zoomable" loading="lazy"></div>
     </div>
 
-    <!-- CONTACTO Y CIERRE -->
+    <!-- CONTACTO -->
     <footer>
         <h2 class="section-title" style="margin-bottom: 10px;">¿Te interesa este vehículo?</h2>
         <p style="color: #a1a1aa; margin-bottom: 20px;">Bogotá, D.C. · Agenda tu cita para verlo.</p>
         <a href="https://wa.me/573106282985?text=Hola,%20estoy%20interesado%20en%20el%20Mercedes-Benz%20A250%20Sport%202016" class="cta-btn" target="_blank">Contactar por WhatsApp</a>
     </footer>
 
-    <!-- SCRIPT DE ANIMACIÓN AL HACER SCROLL -->
+    <!-- SCRIPTS DE ANIMACIÓN Y ZOOM POR DOBLE TOQUE -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Animación de aparición al hacer scroll
             const cards = document.querySelectorAll('.photo-card');
-            
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
@@ -423,8 +439,32 @@
                 });
             }, { threshold: 0.1 });
 
-            cards.forEach(card => {
-                observer.observe(card);
+            cards.forEach(card => observer.observe(card));
+
+            // Funcionalidad de Double Tap (Doble toque para hacer zoom)
+            const zoomableImages = document.querySelectorAll('.zoomable');
+            zoomableImages.forEach(img => {
+                let lastTap = 0;
+                img.addEventListener('click', function(e) {
+                    const currentTime = new Date().getTime();
+                    const tapLength = currentTime - lastTap;
+                    if (tapLength < 300 && tapLength > 0) {
+                        // Doble toque detectado
+                        if (img.classList.contains('zoomed')) {
+                            img.classList.remove('zoomed');
+                            img.style.transformOrigin = 'center center';
+                        } else {
+                            // Obtener coordenadas del toque para hacer zoom hacia ese punto
+                            const rect = img.getBoundingClientRect();
+                            const x = ((e.clientX - rect.left) / rect.width) * 100;
+                            const y = ((e.clientY - rect.top) / rect.height) * 100;
+                            img.style.transformOrigin = `${x}% ${y}%`;
+                            img.classList.add('zoomed');
+                        }
+                        e.preventDefault();
+                    }
+                    lastTap = currentTime;
+                });
             });
         });
     </script>
