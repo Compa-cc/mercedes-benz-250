@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,7 +20,7 @@
             scroll-behavior: smooth;
         }
         
-        /* HERO SECTION - ESTILO FICHA TÉCNICA VERTICAL */
+        /* HERO SECTION - FICHA TÉCNICA VERTICAL */
         .hero {
             min-height: 100vh;
             padding: 40px 20px;
@@ -63,6 +64,10 @@
             color: #00D26A;
             font-weight: 700;
         }
+        .car-title {
+            width: 100%;
+            margin-bottom: 15px;
+        }
         .car-title h1 {
             font-size: 2.2rem;
             font-weight: 700;
@@ -72,7 +77,6 @@
             font-size: 1.6rem;
             font-weight: 400;
             color: #a1a1aa;
-            margin-bottom: 20px;
         }
         .hero-image-container {
             width: 100%;
@@ -133,6 +137,7 @@
             align-items: center;
             justify-content: center;
             color: #00D26A;
+            font-size: 0.9rem;
             flex-shrink: 0;
         }
         .stat-info .stat-label {
@@ -146,7 +151,39 @@
             font-weight: 600;
         }
 
-        /* TECH SPECS BAR */
+        /* TECH SPECS GRID (FABRICA) */
+        .tech-section {
+            width: 100%;
+            background: #141419;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .tech-title {
+            font-size: 0.85rem;
+            color: #00D26A;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .tech-item .t-label {
+            font-size: 0.65rem;
+            color: #888891;
+            text-transform: uppercase;
+        }
+        .tech-item .t-val {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* TECH SPECS BAR INFERIOR */
         .specs-bar {
             width: 100%;
             display: grid;
@@ -184,7 +221,7 @@
             60% {transform: translateY(-3px);}
         }
 
-        /* GALERÍA DE FOTOS EN GRANDE */
+        /* GALERÍA DE 15 FOTOS EN GRANDE */
         .gallery-wrapper {
             max-width: 700px;
             margin: 0 auto;
@@ -204,7 +241,7 @@
             background: #141419;
             border: 1px solid rgba(255,255,255,0.08);
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            opacity: 0;
+           opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
@@ -256,7 +293,7 @@
             </div>
         </div>
 
-        <div class="car-title" style="width: 100%; margin-bottom: 15px;">
+        <div class="car-title">
             <h1>Mercedes-Benz</h1>
             <h2>A250 Sport 2016</h2>
         </div>
@@ -288,29 +325,60 @@
                 <div class="stat-icon">🔧</div>
                 <div class="stat-info">
                     <div class="stat-label">Historial de Servicios</div>
-                    <div class="stat-val">Mantenimientos 100% Concesionario</div>
+                    <div class="stat-val">Mantenimientos 100% en Concesionario</div>
                 </div>
             </div>
         </div>
 
-        <!-- BARRA INFERIOR DE ESPECIFICACIONES -->
+        <!-- FICHA TÉCNICA DE FÁBRICA Y DESEMPEÑO -->
+        <div class="tech-section">
+            <div class="tech-title">Ficha Técnica & Desempeño</div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="t-label">Motor</div>
+                    <div class="t-val">2.0L Turbo 218 HP</div>
+                </div>
+                <div class="tech-item">
+                    <div class="t-label">Torque Máximo</div>
+                    <div class="t-val">350 Nm @ 1.200 RPM</div>
+                </div>
+                <div class="tech-item">
+                    <div class="t-label">Transmisión</div>
+                    <div class="t-val">7G-DCT (7 Vel. con Levas)</div>
+                </div>
+                <div class="tech-item">
+                    <div class="t-label">0-100 km/h</div>
+                    <div class="t-val">6,4 Segundos</div>
+                </div>
+                <div class="tech-item">
+                    <div class="t-label">Seguridad</div>
+                    <div class="t-val">7 Airbags + Attention Assist</div>
+                </div>
+                <div class="tech-item">
+                    <div class="t-label">Modos de Manejo</div>
+                    <div class="t-val">DYNAMIC SELECT</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA INFERIOR DE DESTACADOS -->
         <div class="specs-bar">
             <div class="spec-col">
-                <div class="spec-title">Motor</div>
-                <div class="spec-desc">2.0L Turbo 218 HP</div>
+                <div class="spec-title">Tracción</div>
+                <div class="spec-desc">Delantera (FWD)</div>
             </div>
             <div class="spec-col">
-                <div class="spec-title">Transmisión</div>
-                <div class="spec-desc">7G-DCT 7 Vel. Levas</div>
+                <div class="spec-title">Suspensión</div>
+                <div class="spec-desc">Deportiva AMG Line</div>
             </div>
             <div class="spec-col">
                 <div class="spec-title">Infotenimiento</div>
-                <div class="spec-desc highlight">12" Wireless CarPlay / Android</div>
+                <div class="spec-desc highlight">Pantalla 12" CarPlay / Android</div>
             </div>
         </div>
 
         <div class="scroll-indicator">
-            ↓ Desliza para ver la galería ↓
+            ↓ Desliza para ver la galería (15 fotos) ↓
         </div>
     </section>
 
@@ -362,3 +430,5 @@
     </script>
 </body>
 </html>
+
+```
