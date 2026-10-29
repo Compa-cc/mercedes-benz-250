@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz A250 Sport 2016 - En Venta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+        body {
+            background-color: #0b0b0e;
+            color: #f1f1f3;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* HERO SECTION - ESTILO FICHA TÉCNICA VERTICAL */
+        .hero {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .hero-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: #142a1d;
+            color: #00D26A;
+            border: 1px solid rgba(0, 210, 106, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .price-box {
+            text-align: right;
+        }
+        .price-label {
+            font-size: 0.7rem;
+            color: #888891;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price-value {
+            font-size: 1.8rem;
+            color: #00D26A;
+            font-weight: 700;
+        }
+        .car-title h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .car-title h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #a1a1aa;
+            margin-bottom: 20px;
+        }
+        .hero-image-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #141419;
+            margin-bottom: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            position: relative;
+        }
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .location-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: #f1f1f3;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .location-tag span {
+            color: #00D26A;
+        }
+
+        /* STATS / INFO CARDS */
+        .stats-grid {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .stat-card {
+            background: #141419;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 14px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            background: #1b2620;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00D26A;
+            flex-shrink: 0;
+        }
+        .stat-info .stat-label {
+            font-size: 0.7rem;
+            color: #888891;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .stat-info .stat-val {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* TECH SPECS BAR */
+        .specs-bar {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .spec-col .spec-title {
+            font-size: 0.65rem;
+            color: #888891;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .spec-col .spec-desc {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .spec-col .spec-desc.highlight {
+            color: #00D26A;
+        }
+
+        .scroll-indicator {
+            margin-top: 30px;
+            text-align: center;
+            color: #00D26A;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-6px);}
+            60% {transform: translateY(-3px);}
+        }
+
+        /* GALERÍA DE FOTOS EN GRANDE */
+        .gallery-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+        .photo-card {
+            margin-bottom: 30px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #141419;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .photo-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* FOOTER / CONTACTO */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: #0b0b0e;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #00D26A;
+            color: #0b0b0e;
+            padding: 16px 36px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 10px 25px rgba(0, 210, 106, 0.3);
+            margin-top: 15px;
+        }
+        .cta-btn:hover {
+            background: #00b85c;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PANTALLA INICIAL (HERO / FICHA TÉCNICA) -->
+    <section class="hero">
+        <div class="hero-top">
+            <div class="badge">★ Único Dueño · Impecable</div>
+            <div class="price-box">
+                <div class="price-label">Precio de Venta</div>
+                <div class="price-value">$82.900.000 <span style="font-size: 1rem;">COP</span></div>
+            </div>
+        </div>
+
+        <div class="car-title" style="width: 100%; margin-bottom: 15px;">
+            <h1>Mercedes-Benz</h1>
+            <h2>A250 Sport 2016</h2>
+        </div>
+
+        <div class="hero-image-container">
+            <img src="images/1.jpg" alt="Mercedes-Benz A250 Sport">
+            <div class="location-tag">
+                <span>📍</span> Bogotá, Colombia
+            </div>
+        </div>
+
+        <!-- TARJETAS DE DATOS CLAVE -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">km</div>
+                <div class="stat-info">
+                    <div class="stat-label">Kilometraje Real</div>
+                    <div class="stat-val">46.000 KM</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🛡️</div>
+                <div class="stat-info">
+                    <div class="stat-label">Estado de Carrocería</div>
+                    <div class="stat-val">100% Asegurable · Nunca Chocado</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔧</div>
+                <div class="stat-info">
+                    <div class="stat-label">Historial de Servicios</div>
+                    <div class="stat-val">Mantenimientos 100% Concesionario</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BARRA INFERIOR DE ESPECIFICACIONES -->
+        <div class="specs-bar">
+            <div class="spec-col">
+                <div class="spec-title">Motor</div>
+                <div class="spec-desc">2.0L Turbo 211 HP</div>
+            </div>
+            <div class="spec-col">
+                <div class="spec-title">Transmisión</div>
+                <div class="spec-desc">7G-DCT 7 Vel. Levas</div>
+            </div>
+            <div class="spec-col">
+                <div class="spec-title">Infotenimiento</div>
+                <div class="spec-desc highlight">12" Wireless CarPlay / Android</div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            ↓ Desliza para ver la galería (15 fotos) ↓
+        </div>
+    </section>
+
+    <!-- GALERÍA DE 15 FOTOS EN GRANDE CON SCROLL Y ANIMACIÓN -->
+    <div class="gallery-wrapper">
+        <h2 class="section-title">Galería del Vehículo</h2>
+
+        <div class="photo-card"><img src="images/1.jpg" alt="Foto 1" loading="lazy"></div>
+        <div class="photo-card"><img src="images/2.jpg" alt="Foto 2" loading="lazy"></div>
+        <div class="photo-card"><img src="images/3.jpg" alt="Foto 3" loading="lazy"></div>
+        <div class="photo-card"><img src="images/4.jpg" alt="Foto 4" loading="lazy"></div>
+        <div class="photo-card"><img src="images/5.jpg" alt="Foto 5" loading="lazy"></div>
+        <div class="photo-card"><img src="images/6.jpg" alt="Foto 6" loading="lazy"></div>
+        <div class="photo-card"><img src="images/7.jpg" alt="Foto 7" loading="lazy"></div>
+        <div class="photo-card"><img src="images/8.jpg" alt="Foto 8" loading="lazy"></div>
+        <div class="photo-card"><img src="images/9.jpg" alt="Foto 9" loading="lazy"></div>
+        <div class="photo-card"><img src="images/10.jpg" alt="Foto 10" loading="lazy"></div>
+        <div class="photo-card"><img src="images/11.jpg" alt="Foto 11" loading="lazy"></div>
+        <div class="photo-card"><img src="images/12.jpg" alt="Foto 12" loading="lazy"></div>
+        <div class="photo-card"><img src="images/13.jpg" alt="Foto 13" loading="lazy"></div>
+        <div class="photo-card"><img src="images/14.jpg" alt="Foto 14" loading="lazy"></div>
+        <div class="photo-card"><img src="images/15.jpg" alt="Foto 15" loading="lazy"></div>
+    </div>
+
+    <!-- CONTACTO Y CIERRE -->
+    <footer>
+        <h2 class="section-title" style="margin-bottom: 10px;">¿Te interesa este vehículo?</h2>
+        <p style="color: #a1a1aa; margin-bottom: 20px;">Bogotá, D.C. · Agenda tu cita para verlo.</p>
+        <a href="https://wa.me/573000000000?text=Hola,%20estoy%20interesado%20en%20el%20Mercedes-Benz%20A250%20Sport%202016" class="cta-btn" target="_blank">Contactar por WhatsApp</a>
+    </footer>
+
+    <!-- SCRIPT DE ANIMACIÓN AL HACER SCROLL -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.photo-card');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
